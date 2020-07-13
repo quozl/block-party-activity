@@ -30,9 +30,7 @@ import time
 import sys
 import random
 import copy
-import socket
 import os
-import logging
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -42,7 +40,6 @@ gi.require_version('Gst', '1.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
-from gi.repository import Gst
 from gi.repository import Pango
 from gi.repository import PangoCairo
 
