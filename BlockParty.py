@@ -32,7 +32,6 @@ import random
 import copy
 import socket
 import os
-from queue import Queue
 import logging
 
 import gi
