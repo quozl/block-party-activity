@@ -244,7 +244,7 @@ class BlockParty:
                 if i == 0:
                     self.make_sound('ouch.wav')
                 if i == 1:
-                    self.make_sound('wah.au')
+                    self.make_sound('wah.wav')
                 if i == 2:
                     self.make_sound('lost.wav')
                 self.game_mode = self.GAME_OVER
@@ -335,7 +335,7 @@ class BlockParty:
                 for j in range(self.bw):
                     self.glass[i][j] = -self.glass[i][j]
         if len(clearlines) > 0:
-            self.make_sound('boom.au')
+            self.make_sound('boom.wav')
             for i in clearlines:
                 for j in range(self.bw):
                     self.glass[i][j] = 0
