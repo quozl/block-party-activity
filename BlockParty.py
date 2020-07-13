@@ -558,14 +558,14 @@ class BlockParty:
         filename = os.path.abspath(os.path.join('sounds', filename))
         self.audioplayer.play(filename)
 
-    def __init__(self, toplevel_window, da, font_face='Sans', font_size=14):
+    def __init__(self, toplevel_window, da, font_face='Sans', font_size=14, gcs=0):
         self.glass = [[0] * self.bw for i in range(self.bh)]
         self.view_glass = None
         self.window = toplevel_window
         self.da = da
 
         self.window_w = self.window.get_screen().get_width()
-        self.window_h = self.window.get_screen().get_height()
+        self.window_h = self.window.get_screen().get_height() - gcs
         self.window.set_title("Block Party")
         self.window.connect("destroy", lambda w: Gtk.main_quit())
         da.set_size_request(self.window_w, self.window_h)
