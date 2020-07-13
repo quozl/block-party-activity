@@ -1,0 +1,17 @@
+9
+
+* Port to GTK 3,
+* Add Sugar toolbar,
+* Fix vanishing cursor,
+* Rewrite README,
+* Add missing sound files,
+* Fix game on different display sizes,
+* Centre activity icon,
+* Remove unused code,
+* Use font per Sugar configuration.
+
+8
+
+* change metadata.
+
+7
