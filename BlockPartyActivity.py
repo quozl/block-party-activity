@@ -25,9 +25,11 @@
 from BlockParty import BlockParty
 
 from sugar3.activity import activity
+from sugar3.graphics.style import FONT_FACE, FONT_SIZE
 
 
 class BlockPartyActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
-        self.block_party = BlockParty(self)
+        self.block_party = BlockParty(
+            self, font_face=FONT_FACE, font_size=FONT_SIZE * 2)
