@@ -78,8 +78,12 @@ class BlockPartyActivity(activity.Activity):
         toolbar_box.show()
 
         canvas = Gtk.DrawingArea()
-        BlockParty(self, canvas,
-                   font_face=style.FONT_FACE, font_size=style.FONT_SIZE * 2,
-                   gcs=style.GRID_CELL_SIZE)
+        self.block_party = BlockParty(
+            self, canvas, font_face=style.FONT_FACE, font_size=style.FONT_SIZE * 2,
+            gcs=style.GRID_CELL_SIZE)
         self.set_canvas(canvas)
         canvas.show()
+
+    def close(self, **kwargs):
+        self.block_party.close()
+        activity.Activity.close(self, **kwargs)
