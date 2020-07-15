@@ -439,13 +439,18 @@ def make_sound(filename):
         msg = "perf.InputMessage('i 108 0 3 \"%s\" %d 0.7 0.5 0')\n" % (os.path.abspath(filename), csid)
         cssock.send(msg)
 
-def init():
+def init(toplevel_window):
     global glass, bwpx, bhpx, bw, bh, xshift, yshift, xnext, ynext
     global window, area, gc, glass, cm, cmap, scorefont
     global window_w, window_h
     global color_back, color_glass, color_score
     glass=[[0]*bw for i in range(bh)]
-    window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+    window = toplevel_window
+    
+    # remove any children of the window that Sugar may have added
+    for widget in window.get_children():
+        window.remove(widget)
+
     window_w = window.get_screen().get_width()
     window_h = window.get_screen().get_height()
     if window_w > 1024: window_w=1024
@@ -481,7 +486,8 @@ def init():
     init_game()
 
 def main():
-    init()
+    toplevel_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+    init(toplevel_window)
     gtk.main()
     return 0
 
